@@ -1,0 +1,5 @@
+host = yuzhou.us;
+database = doremi;
+username = yzhou;
+password = yzhou.;
+
