@@ -4,7 +4,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Welcome to CodeIgniter</title>
+    <meta content="/images/favicon.png" itemprop="image">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/cff_logo.gif">
+	<title>Welcome to DoReMi</title>
 
 	<style type="text/css">
 
@@ -79,19 +81,28 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	<div id="body">
 
-        <p class="center">Search Music Id by Title, singer, or rating.</p>
-        <code><form class="center">Title: <input><button>Search</button></form></code>
-        <code><form class="center">Singer: <input><button>Search</button></form></code>
-        <code>Rating List:<form class="center">
-                <ul>
-                    <li>爱你一万年</li>
-                    <li>爱你一千年</li>
-                    <li>爱你一百年</li>
-                </ul></form></code>
-		<p class="center">If you are exploring DoReMi for the very fir    st time, you should start by reading the &nbsp;<a href="user_guide/">User Guide</a>.</p>
-</div>
+        <div>
+            <p class="center">Search Music Id by Title, singer, or rating.</p>
+            <div>
+                <img alt="DoReMi" height="95" id="hplogo" src="/images/doremi_index.png">
+            </div>
+            <code><form class="center">Title: <input><button>Search</button></form></code>
+            <code><form class="center">Singer: <input><button>Search</button></form></code>
+            <code>Rating List:<form class="center">
+                    <ul>
+                        <li>爱你一万年</li>
+                        <li>爱你一千年</li>
+                        <li>爱你一百年</li>
+                    </ul></form></code>
+            <p class="center">If you are exploring DoReMi for the very first time, you should start by reading the &nbsp;<a href="user_guide/">DoReMi Guide</a>.</p>
+        </div>
+    </div>
 
-	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'DoReMi Version <strong>' . '0.0.1' . '</strong>' : '' ?></p>
+    <p class="footer center">
+        Address: <strong>&nbsp;442 Cambridge St&nbsp;</strong> , Allston, MA 02134
+        Phone:<strong>&nbsp;(617) 783-8900&nbsp;</strong>
+        Hours: Open today · 4:00 pm – 1:30 am</p>
+	<p class="footer center" style="display: none;">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'DoReMi Version <strong>' . '0.0.1' . '</strong>' : '' ?></p>
 </div>
 
 </body>
