@@ -1,3 +1,4 @@
+
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
@@ -84,19 +85,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div id="body">
 
         <div>
-            <p class="center">Search Music Id by Title, singer, or rating.</p>
-            <code><form class="center"  action="/index.php/Welcome/search" method="post">
-                    Title: <input placeholder="Title" id="musicTitle" class="feedback-input" type="text" name="musicTitle">
-                    <button>Search</button></form></code>
-            <code><form class="center"  action="/index.php/Welcome/search" method="post">
-                    Singer: <input placeholder="Singer's last name or first name" id="singer" class="feedback-input" type="text" name="singer">
-                    <button>Search</button></form></code>
-            <code>Rating List:<form class="center">
+            <form class="center">Title: <input><button>Search</button></form>
+            <?php echo(isset($id) ? $id : "");?>
+            <code>Rating List:
+                <form class="center">
                     <ul>
                         <li>爱你一万年</li>
                         <li>爱你一千年</li>
                         <li>爱你一百年</li>
-                    </ul></form></code>
+                    </ul>
+                </form>
+            </code>
 
         </div>
     </div>

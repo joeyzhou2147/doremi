@@ -30,6 +30,8 @@ class Welcome extends CI_Controller {
             if(isset($singer)){
             //title singer is not null
                 $id = $this->Music_model->activeGetIdByTitleSinger($musicTitle,$singer);
+                $data['id'] = $id;
+                $this->load->view('active_search', $data);
             }
             else{
             //title not null singer null
