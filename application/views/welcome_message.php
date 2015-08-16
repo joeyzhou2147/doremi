@@ -62,8 +62,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	#container {
 		margin: 10px;
-		border: 1px solid #D0D0D0;
-		box-shadow: 0 0 8px #D0D0D0;
+		border: 0px solid #D0D0D0;
+		box-shadow: 0 0 0px #D0D0D0;
 	}
 
         .center{
@@ -77,15 +77,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 
 <div id="container">
-	<h1 class="center">Welcome to Do Re Mi!</h1>
+    <div class="center">
+        <img class="center" alt="DoReMi" height="95" id="hplogo" src="/images/doremi_index.png">
+    </div>
 
 	<div id="body">
 
         <div>
             <p class="center">Search Music Id by Title, singer, or rating.</p>
-            <div>
-                <img alt="DoReMi" height="95" id="hplogo" src="/images/doremi_index.png">
-            </div>
             <code><form class="center">Title: <input><button>Search</button></form></code>
             <code><form class="center">Singer: <input><button>Search</button></form></code>
             <code>Rating List:<form class="center">
@@ -94,11 +93,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <li>爱你一千年</li>
                         <li>爱你一百年</li>
                     </ul></form></code>
-            <p class="center">If you are exploring DoReMi for the very first time, you should start by reading the &nbsp;<a href="user_guide/">DoReMi Guide</a>.</p>
+
         </div>
     </div>
 
-    <p class="footer center">
+    <p class="footer center" style="margin-top: 100px;">
         Address: <strong>&nbsp;442 Cambridge St&nbsp;</strong> , Allston, MA 02134
         Phone:<strong>&nbsp;(617) 783-8900&nbsp;</strong>
         Hours: Open today · 4:00 pm – 1:30 am</p>

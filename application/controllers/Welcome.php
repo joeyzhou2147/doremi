@@ -22,4 +22,27 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('welcome_message');
 	}
+
+    public function search(){
+        $musicTitle = $this->input->post('musicTitle');
+        $singer = $this->input->post('singer');
+        if(isset($musicTitle)){
+            if(isset($singer)){
+            //title singer is not null
+                $id = $this->Music_model->activeGetIdByTitleSinger($musicTitle,$singer);
+            }
+            else{
+            //title not null singer null
+                $id = $this->Music_model->activeGetIdByTitle($musicTitle);
+            }
+        }else{
+            if(isset($singer)){
+            //title not null singer null
+                $id = $this->Music_model->activeGetIdBySinger($singer);
+            }
+            else{
+                redirect('/index');
+            }
+        }
+    }
 }
