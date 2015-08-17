@@ -14,57 +14,63 @@ class Music_model extends CI_Model
 
 
     public function activeGetIdByTitle($musicTitle){
-        $this->db->like('musicTitle', $musicTitle);
-        $this->db->select('musicId, musicTitle, singer');
-        $this->db->from('music');
+        $result = array();
+        $musicTitle = str_replace(" ", "%", $musicTitle);
+        //$this->db->select('musicId, musicTitle, singer');
+        $this->db->select('musicId, musicTitle, singer')->from('music')->like('musicTitle', $musicTitle);
         $query = $this->db->get();
-        if ($query->num_rows()> 0) {
-            $result = $query->row_array();
-            return $result;
-        } else {
-            return false;
+        $str = $this->db->last_query();
+        echo $str;
+        if ($query->num_rows() > 0) {
+            $result = $query->result_array();
         }
+        return $result;
     }
 
     public function activeGetIdByTitleSinger($musicTitle,$singer){
-        $this->db->like('musicTitle', $musicTitle);
-        $this->db->like('singer', $singer);
+        $result = array();
+        $musicTitle = str_replace(" ", "%", $musicTitle);
+        $singer = str_replace(" ", "%", $singer);
         $this->db->select('musicId, musicTitle, singer');
         $this->db->from('music');
+        $this->db->like('musicTitle', $musicTitle);
+        $this->db->like('singer', $singer);//not or like
+        //$this->db->or_like('singer', $singer);
         $query = $this->db->get();
-        if ($query->num_rows()> 0) {
-            $result = $query->row_array();
-            return $result;
-        } else {
-            return false;
+        $str = $this->db->last_query();
+        echo $str;
+        if ($query->num_rows() > 0) {
+            $result = $query->result_array();
         }
+        return $result;
     }
 
     public function queryGetIdByTitle($news_id){
+        $result = array();
         $this->db->where('news_id', $news_id);
         $query = $this->db->get('news');
+        $str = $this->db->last_query();
+        echo $str;
         if ($query->num_rows() > 0) {
-            $result = $query->row_array();
-            if(isset($result['content'])){
-                $result['content'] = stripcslashes($result['content']);}
-            return $result;
-        } else {
-            return false;
+            $result = $query->result_array();
         }
+            return $result;
+
     }
 
 
 
     public function activeGetIdBySinger($singer){
-        $this->db->like('singer', $singer);
+        $result = array();
         $this->db->select('musicId, musicTitle, singer');
         $this->db->from('music');
+        $this->db->like('singer', $singer);
         $query = $this->db->get();
-        if ($query->num_rows()> 0) {
-            $result = $query->row_array();
-            return $result;
-        } else {
-            return false;
+        $str = $this->db->last_query();
+        echo $str;
+        if ($query->num_rows() > 0) {
+            $result = $query->result_array();
         }
+        return $result;
     }
 }

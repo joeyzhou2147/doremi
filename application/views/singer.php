@@ -1,3 +1,4 @@
+
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
@@ -96,21 +97,32 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div id="body">
 
         <div>
-            <form class="center"  action="/index.php/title/search" method="post">
-                <div><input class="width120" placeholder="Title" id="musicTitle" class="feedback-input" type="text" name="musicTitle"></div>
-                <div><input class="width120 hidden" placeholder="Singer's last name or first name" id="singer" class="feedback-input" type="text" name="singer"></div>
+            <form class="center"  action="/index.php/singer/search" method="post">
+                <div><input class="width120 hidden" placeholder="Title" id="musicTitle" class="feedback-input" type="text" name="musicTitle"></div>
+                <div><input class="width120 " placeholder="Singer's last name or first name" id="singer" class="feedback-input" type="text" name="singer"></div>
                 <button>Search</button></form>
 
             <p class="center">Search Music Id by&nbsp;
                 <a href="/index.php/title" class="pointer">Title</a>,&nbsp;
                 <a href="/index.php/singer" class="pointer">singer</a>, or rating.</p>
 
-            <code>Rating List:<form class="center">
+            <code>Rating List:
+                <form class="center">
                     <ul>
-                        <li>爱你一万年</li>
-                        <li>爱你一千年</li>
-                        <li>爱你一百年</li>
-                    </ul></form></code>
+                        <li>000000&emsp;爱你一万年&emsp;&emsp;&emsp;singer;</li>
+                        <li>000000&emsp;爱你一千年&emsp;&emsp;&emsp;singer;</li>
+                        <li>000000&emsp;爱你一百年&emsp;&emsp;&emsp;singer;</li>
+                        <?php
+                        if(isset($id)){
+                            foreach($id as $row){
+                                //echo $row;
+                                echo '<li>'.$row['musicId'].'&emsp;'.$row['musicTitle'].'&emsp;&emsp;&emsp;'.$row['singer'].';'.'</li>';
+                            }
+                        }
+                        ?>
+                    </ul>
+                </form>
+            </code>
 
         </div>
     </div>
